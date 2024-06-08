@@ -243,8 +243,8 @@
                           </select>
                           <select class="w-full select select-primary" wire:model='is_active'>
                             <option value="" selected>Statut école?</option>
-                            <option value="0">Actif</option>
-                            <option value="1">Inactif</option>
+                            <option value="1">Actif</option>
+                            <option value="0">Inactif</option>
                           </select>
                     </div>
                 </div>
