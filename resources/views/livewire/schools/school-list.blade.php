@@ -45,7 +45,7 @@
                 </td>
                 <td>Purple</td>
                 <th>
-                <a href="{{route("schools.edit", $ecole)}}" wire:navigate class="btn btn-ghost btn-xs" >details</a>
+                <a href="{{route("schools.edit", $ecole)}}" wire:navigate class="btn btn-ghost btn-xs text-primary" >details</a>
                 </th>
             </tr>
 

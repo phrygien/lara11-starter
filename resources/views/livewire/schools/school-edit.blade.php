@@ -1,5 +1,5 @@
 <div>
-    <x-mary-header title="Modification ecole > {{ $name }}" separator />
+    <x-mary-header title="Details école > {{ $name }}" separator />
         <div>
             {{-- <x-mary-form wire:submit="save">
                 <div class="grid gap-8 lg:grid-cols-2">
@@ -338,7 +338,7 @@
                         </div>
 
                         <x-slot:actions>
-                            <x-mary-button label="Annuler" />
+                            <x-mary-button label="Retour" class="btn-warning" link="{{ route('schools.index') }}" />
                             <x-mary-button label="Enregistrer" class="btn-primary" type="submit" spinner="update" />
                         </x-slot:actions>
                     </x-mary-form>

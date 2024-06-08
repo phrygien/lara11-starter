@@ -336,7 +336,7 @@
                 </div>
 
                 <x-slot:actions>
-                    <x-mary-button label="Annuler" />
+                    <x-mary-button label="Retour" class="btn-warning" link="{{ route('schools.index') }}" />
                     <x-mary-button label="Enregistrer" class="btn-primary" type="submit" spinner="save" />
                 </x-slot:actions>
             </x-mary-form>

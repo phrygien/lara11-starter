@@ -158,17 +158,13 @@ class SchoolEdit extends Component
 
             if($this->logo){
                 if ($this->school->logo && $this->school->logo != 'storage/default.jpg') {
-
-                    // Verifique se o arquivo de imagem existe antes de tentar excluí-lo
                     if (Storage::exists('public/'.$this->school->logo)) {
                         Storage::delete('public/'.$this->school->logo);
                     }
                 }
 
-                // Salva a nova imagem
                 $this->school->logo = $this->logo->store('public/products');
 
-                // Remova o prefixo "public/" do caminho da imagem
                 $this->school->logo = Str::replaceFirst('public/', '', $this->school->logo);
             }
 
