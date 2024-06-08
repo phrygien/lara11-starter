@@ -15,3 +15,19 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::group(['middleware' => 'auth'], function()
+{
+    Route::view('schools', 'schools.index')
+    ->middleware(['auth'])
+    ->name('schools.index');
+
+    Route::view('schools/create', 'schools.create')
+    ->middleware(['auth'])
+    ->name('schools.create');
+
+    Route::view('annees', 'annees.index')
+    ->middleware(['auth'])
+    ->name('annees.index');
+
+});
