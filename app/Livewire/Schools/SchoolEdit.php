@@ -20,6 +20,7 @@ class SchoolEdit extends Component
 {
     use WithFileUploads;
 
+    public $myModal3 = false;
     public School $school;
 
     public $schoolId;
@@ -157,7 +158,7 @@ class SchoolEdit extends Component
             $this->school->adresse = $this->adresse;
 
             if($this->logo){
-                if ($this->school->logo && $this->school->logo != 'storage/default.jpg') {
+                if ($this->school->logo && $this->school->logo != 'products/default.jpg') {
                     if (Storage::exists('public/'.$this->school->logo)) {
                         Storage::delete('public/'.$this->school->logo);
                     }
@@ -192,5 +193,15 @@ class SchoolEdit extends Component
                 redirectTo: '/schools'
             );
         }
+    }
+
+    public function deleteSchool(School $school)
+    {
+        $this->school->delete();
+        $this->myModal3 = false;
+        $this->success(
+            'School Deleted !',
+            redirectTo: '/schools'
+        );
     }
 }

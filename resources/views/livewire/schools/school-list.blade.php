@@ -1,5 +1,5 @@
 <div class="overflow-x-auto">
-    <table class="table">
+    {{-- <table class="table">
       <!-- head -->
       <thead>
         <tr>
@@ -63,5 +63,24 @@
         </tr>
       </tfoot>
 
-    </table>
+    </table> --}}
+    @if($totalSelected > 0)
+    <x-mary-dropdown label="Actions" class="btn-warning" right>
+        <x-mary-menu-item title="Activer  le {{ $totalSelected }} selectionné" icon="o-archive-box" />
+        <x-mary-menu-item title="Desactiver le {{ $totalSelected }} selectionné" icon="o-trash" />
+        <x-mary-menu-item title="Supprimer le {{ $totalSelected }} selectionné" icon="o-arrow-path" />
+    </x-mary-dropdown>
+    @endif
+
+    <x-mary-table :headers="$headers" :rows="$ecoles" striped link="/schools/{id}/edit" with-pagination selectable wire:model="selected" class="mt-3" @row-selection="$wire.countSelected()">
+        @scope('cell_logo', $ecole)
+            <x-mary-avatar image="storage/{{ $ecole->logo ?? '/empty-user.jpg' }}" class="!w-10" />
+        @endscope
+
+        {{-- @scope('actions', $ecole)
+            <x-mary-button icon="o-trash" wire:click="delete({{ $ecole->id }})" spinner class="btn-sm" tooltip-bottom="Delete" />
+        @endscope --}}
+
+    </x-mary-table>
+
   </div>

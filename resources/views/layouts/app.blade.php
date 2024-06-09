@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="acid">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="wireframe">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
         @livewireStyles
     </head>
     <body class="min-h-screen font-sans antialiased bg-base-200/50 dark:bg-base-200">
-        <x-mary-toast position="toast-top toast-center" />
+        <x-mary-toast position="toast-bottom toast-right" />
         {{-- The navbar with `sticky` and `full-width` --}}
         <x-mary-nav sticky class="mb-5">
 
